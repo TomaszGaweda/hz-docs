@@ -187,13 +187,13 @@ The Jet API supports more connectors than SQL.
 
 |xref:integrate:pulsar-connector.adoc[PulsarSources.pulsarConsumer]
 |hazelcast-jet-pulsar
-|streaming
+|streaming (many consumer per topic to distribute reading)
 |exactly-once
 
 |xref:integrate:pulsar-connector.adoc[PulsarSources.pulsarReader]
 |hazelcast-jet-pulsar
-|streaming
-|N/A
+|streaming (single reader per topic)
+|exactly-once
 
 |xref:integrate:legacy-file-connector.adoc[S3Sources.s3]
 |hazelcast-jet-s3

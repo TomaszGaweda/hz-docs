@@ -48,6 +48,8 @@ To create a mapping to a Pulsar topic in SQL, you must use the `CREATE MAPPING` 
 CREATE MAPPING my_topic <1>
 DATA CONNECTION myPulsar <2>
 OPTIONS (
+    'keyFormat' = 'VARCHAR',
+    'valueFormat' = 'VARCHAR'
     'preferredLocalParallelism' = '2' <3>
 );
 ----
@@ -190,6 +192,7 @@ OPTIONS (
     'keyJavaClass' = 'java.lang.Long',
     'valueFormat' = 'java',
     'valueJavaClass' = 'com.example.Person'
+);
 ----
 
 If the Java class corresponds to one of the basic data types (numbers,
