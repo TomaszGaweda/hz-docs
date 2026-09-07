@@ -83,11 +83,10 @@ string, use the `int` and `varchar` formats:
 
 ```sql
 CREATE MAPPING my_topic
-TYPE Pulsar
+DATA CONNECTION myPulsar
 OPTIONS (
     'keyFormat'='int',
-    'valueFormat'='varchar',
-    'bootstrap.servers' = '127.0.0.1:9092'
+    'valueFormat'='varchar'
 );
 ```
 
