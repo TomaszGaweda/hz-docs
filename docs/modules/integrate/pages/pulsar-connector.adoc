@@ -26,6 +26,7 @@ To read from Pulsar as a source you must provide at least Schema, which Pulsar u
 ----
 Pipeline p = Pipeline.reate();
 p.readFrom(PulsarSources.pulsarConsumerBuilder(json(MyPojo.class))
+                        .connectionSupplier(() -> PulsarClient.builder().serviceUrl("pulsar://localhost:6650").build())
                         .topic("myTopic")
                         .build())
  .withNativeTimestamps(0)
@@ -47,6 +48,7 @@ p.readFrom(Sources.files("home/logs"))
  .map(line -> LogParser.parse(line))
  .map(log -> new LogEntry(log))
  .writeTo(PulsarSinks.builder(json(LogEntry.class))
+                        .connectionSupplier(() -> PulsarClient.builder().serviceUrl("pulsar://localhost:6650").build())
                         .topic("logs")
                         .build());`
 ----
