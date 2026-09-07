@@ -49,8 +49,8 @@ hazelcast:
         brokerUrl: pulsar://pulsar.mydomain.com:6650 <1>
         httpServiceUrl: http://pulsar.mydomain.com:8080 <2>
       shared: true
-    my-other-mongodb:
-      type: Mongo
+    my-other-pulsar:
+      type: Pulsar
       properties:
         brokerUrl: pulsar://pulsar.mydomain.com:6650 <1>
         httpServiceUrl: http://pulsar.mydomain.com:8080 <2>
@@ -104,8 +104,8 @@ Data connections created in SQL behave differently from those defined in members
 
 [source,SQL]
 ----
-CREATE DATA CONNECTION my_mongodb
-TYPE Mongo
+CREATE DATA CONNECTION my_pulsar
+TYPE Pulsar
 SHARED
 OPTIONS (
     'brokerUrl' = 'pulsar://pulsar.mydomain.com:6650' <1>
@@ -117,8 +117,8 @@ OPTIONS (
 
 [source,SQL]
 ----
-CREATE DATA CONNECTION my_mongodb
-TYPE Mongo
+CREATE DATA CONNECTION my_pulsar
+TYPE Pulsar
 SHARED
 OPTIONS (
     'brokerUrl' = 'pulsar://pulsar.mydomain.com:6650' <1>
