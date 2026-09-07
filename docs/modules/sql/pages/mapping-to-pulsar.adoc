@@ -81,14 +81,15 @@ The Pulsar connector supports serializers for the following formats:
 For keys and values that are primitives, set the format as the SQL data type that corresponds to the primitive. For example, if the message key is an integer and the value is a
 string, use the `int` and `varchar` formats:
 
-```sql
+[source,sql]
+----
 CREATE MAPPING my_topic
 DATA CONNECTION myPulsar
 OPTIONS (
     'keyFormat'='int',
     'valueFormat'='varchar'
 );
-```
+----
 
 The Pulsar connector will apply a suitable Schema automatically, for example `Schema.STRING`.
 
